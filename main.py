@@ -7,8 +7,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Constants
-ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
-AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
 WEATHER_KEY= os.environ.get("OWM_WEATHER_API_KEY")
 MY_LAT= os.environ.get("ZNA_LAT")
 MY_LONG= os.environ.get("ZNA_LONG")
