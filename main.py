@@ -1,4 +1,4 @@
-"""Weather Alert App: Sends weather alerts via email"""
+"""Weather Update App: Sends weather updates via email"""
 import requests
 import os
 import smtplib
@@ -26,9 +26,9 @@ weather_data = response.json()
 
 today_weather = weather_data["weather"][0]["main"]
 
-MESSAGE = f"Subject: Weather Alert!\n\n{today_weather} today."
+MESSAGE = f"Subject: Weather Update!\n\n{today_weather} today."
 
-# Send email alert
+# Send email update
 with smtplib.SMTP("smtp.gmail.com") as connection:
     connection.starttls()
     connection.login(user=USER_ID, password=ID_PASSWORD)
@@ -37,4 +37,4 @@ with smtplib.SMTP("smtp.gmail.com") as connection:
         to_addrs=USER_ID,
         msg=MESSAGE.encode("utf-8"),
     )
-    print("Alert sent successfully.")
+    print("Weather update sent successfully.")
